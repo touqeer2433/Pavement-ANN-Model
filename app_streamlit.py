@@ -118,10 +118,43 @@ LAYERS = ["WC", "ACB", "AggB", "SB", "Fill", "SG"]
 PRETTY = {"WC": "Wearing course", "ACB": "AC base", "AggB": "Aggregate base",
           "SB": "Subbase", "Fill": "Subgrade fill", "SG": "Natural subgrade"}
 
-st.title("PAVE-ANN . pavement response explorer")
-st.caption(f"neural surrogate v{P.meta['version']} . "
-           f"{P.meta['n_ensemble_members']} ensemble members . "
-           f"fingerprint {P.meta['fingerprint']}")
+st.markdown("""
+<div style="
+    background: white;
+    padding: 18px 24px;
+    border-radius: 12px;
+    border: 1px solid #e4e7ec;
+    margin-bottom: 20px;
+">
+    <div style="
+        font-size: 2rem;
+        font-weight: 750;
+        color: #12355b;
+    ">
+        PAVE-ANN
+        <span style="
+            font-size: 1rem;
+            font-weight: 500;
+            color: #667085;
+            margin-left: 12px;
+        ">
+            Artificial Neural Network Model for Flexible Pavement Analysis
+        </span>
+    </div>
+
+    <div style="
+        margin-top: 7px;
+        font-size: 0.85rem;
+        color: #667085;
+    ">
+        Data-driven mechanistic pavement response prediction
+        &nbsp; | &nbsp;
+        v""" + str(P.meta["version"]) + """
+        &nbsp; | &nbsp;
+        5-member ensemble
+    </div>
+</div>
+""", unsafe_allow_html=True)
 
 vals = P.template().iloc[0].to_dict()
 
