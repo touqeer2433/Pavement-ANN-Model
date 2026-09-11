@@ -12,7 +12,101 @@ import streamlit as st
 from predictor import PaveANNPredictor
 
 st.set_page_config(page_title="PAVE-ANN", layout="wide")
+st.markdown("""
+<style>
 
+    /* Main page */
+    .main {
+        background-color: #f7f9fc;
+    }
+
+    .block-container {
+        padding-top: 1.5rem;
+        padding-bottom: 2rem;
+        max-width: 1500px;
+    }
+
+    /* Main title */
+    .main-title {
+        font-size: 2.0rem;
+        font-weight: 700;
+        color: #12355b;
+        margin-bottom: 0.1rem;
+    }
+
+    .main-subtitle {
+        font-size: 0.95rem;
+        color: #667085;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Section headings */
+    .section-title {
+        font-size: 1.25rem;
+        font-weight: 650;
+        color: #12355b;
+        margin-top: 0.5rem;
+        margin-bottom: 0.8rem;
+    }
+
+    /* Metric cards */
+    div[data-testid="stMetric"] {
+        background-color: white;
+        border: 1px solid #e4e7ec;
+        border-radius: 12px;
+        padding: 18px 20px;
+        box-shadow: 0 2px 8px rgba(16, 24, 40, 0.05);
+    }
+
+    div[data-testid="stMetricLabel"] {
+        color: #475467;
+        font-weight: 600;
+    }
+
+    div[data-testid="stMetricValue"] {
+        color: #12355b;
+    }
+
+    /* Sidebar */
+    section[data-testid="stSidebar"] {
+        background-color: #102f4f;
+    }
+
+    section[data-testid="stSidebar"] * {
+        color: white;
+    }
+
+    /* Sidebar sliders */
+    section[data-testid="stSidebar"] .stSlider {
+        padding-bottom: 0.3rem;
+    }
+
+    /* Expanders */
+    div[data-testid="stExpander"] {
+        border: 1px solid #e4e7ec;
+        border-radius: 10px;
+        background-color: white;
+    }
+
+    /* Buttons */
+    .stButton > button {
+        border-radius: 8px;
+        font-weight: 600;
+        min-height: 42px;
+    }
+
+    /* Warning box */
+    div[data-testid="stAlert"] {
+        border-radius: 10px;
+    }
+
+    /* Dataframe */
+    div[data-testid="stDataFrame"] {
+        border-radius: 10px;
+    }
+
+</style>
+""", unsafe_allow_html=True)
 
 @st.cache_resource
 def _load():
